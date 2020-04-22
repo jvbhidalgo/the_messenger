@@ -1,0 +1,8 @@
+{% extends "app/base.html" %} {% block content %}
+<h2>Você se desconectou!</h2>
+<div class="border-top pt-3">
+    <small class="text-muted mr-2">
+        <a href="{% url 'login' %}">Clique aqui para entrar novamente!</a>
+    </small>
+</div>
+{% endblock content %}

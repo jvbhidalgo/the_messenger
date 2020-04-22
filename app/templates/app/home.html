@@ -1,0 +1,14 @@
+{% extends "app/base.html" %} {% block content %} {% if user.is_authenticated %} {% for post in posts %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ post.autor }}</a>
+            <small class="text-muted">{{ post.date_posted|date:"d/m/Y" }}</small>
+        </div>
+        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+        <p class="article-content">{{ post.conteudo }}</p>
+    </div>
+</article>
+{% endfor %} {% else %}
+<h5>Favor realizar o <a class="" href="{% url 'login' %}">Login</a> para acessar o site, ou <a class="" href="{% url 'registro' %}">Cadastre-se</a> agora!</h5>
+{% endif %} {% endblock content %}
