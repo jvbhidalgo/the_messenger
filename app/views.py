@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 def home(request):
 
-    users = User.objects.all()
+    users = User.objects.all().order_by('username')
 
     context = {'users': users}
 
