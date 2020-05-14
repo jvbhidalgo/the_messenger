@@ -4,8 +4,8 @@
 </div>
 <div class="lista-amigos col-md-3" style="text-align: right;">
     
-    {% for user in users %}
-        <h1>{{ user.username }}</h1>
+    {% for i in pesquisa %}
+        <h1>{{ i.username }}</h1>
     {% endfor %}
 </div>
 {% else %}

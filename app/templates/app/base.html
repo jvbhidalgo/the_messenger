@@ -33,9 +33,9 @@
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
-                        <form class="form-inline my-2 my-lg-0 mr-4" id="pesquisa">
-                            <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
-                            <button class="btn btn-outline-primary my-2 my-sm-0" name="pesquisa"type="submit">Pesquisar</button>
+                        <form class="form-inline my-2 my-lg-0 mr-4" action="" method="GET">
+                            <input class="form-control mr-sm-2" type="search" placeholder="" name="pesquisa" aria-label="Search">
+                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Pesquisar</button>
                         </form>
                         <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                         <a class="nav-item nav-link" href="{% url 'profile' %}">Perfil</a> {% else %}

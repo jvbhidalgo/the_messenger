@@ -4,7 +4,19 @@ from django.contrib.auth.models import User
 
 
 def home(request):
-
+ 
+    data = {}
+    data['pesquisa'],data['errors'] = [],[]
+    if request.method == 'GET':
+        pesquisa = request.GET.get('pesquisa')
+        try:
+            data['pesquisa'] = User.objects.filter(username__contains=pesquisa)
+        except:
+            data['errors'].append('Não foi possivel buscar o usuário')
+        return render(request,'app/home.html', data)
+        
+        
+    '''
     pesquisa = User.objects.filter(username__contains='pattern')
     users = User.objects.all().order_by('username')
 
@@ -17,3 +29,4 @@ def home(request):
     #context = {'users': users}
 
     return render(request,'app/home.html', data)
+    '''

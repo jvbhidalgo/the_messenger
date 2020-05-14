@@ -127,27 +127,3 @@ class DjangoSession(models.Model):
     class Meta:
         managed = False
         db_table = 'django_session'
-
-class Friendlist(models.Model):
-    id_my    = models.IntegerField()
-    id_user  = models.ForeignKey(AuthUser, models.DO_NOTHING)
-    datef    = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-      return self.datef
-
-    def get_datef(self):
-      return self.datef
-
-class Mensagem(models.Model):
-    id_friend   = models.ForeignKey(Friendlist, models.DO_NOTHING)
-    id_user     = models.ForeignKey(AuthUser, models.DO_NOTHING)
-    txtmsg      = models.TextField()
-    datemsg     = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-      return self.datemsg
-
-    def get_datemsg(self):
-      return self.datemsg
-
